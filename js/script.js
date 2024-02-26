@@ -48,3 +48,13 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact-form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
+
+//! Typed JS
+const typed = new Typed('.multiple-text', {
+    strings: ['Student', 'Programmer','Computer Engineer', 'Developer'],
+    typeSpeed: 90,
+    backSpeed: 70,
+    backDelay: 1000,
+    loop: true
+});
