@@ -83,6 +83,21 @@ section {
 
 .home-img img { /* width: 35vw; clip-path: circle(); */ /*! Look here for img */
     border-radius: 50%; border: .2rem solid var(--main-color); width: 27vw; height: 27vw;
+    animation: floatimage 4s ease-in-out infinite;
+}
+
+@keyframes floatimage {
+    0% {
+        transform: translateY(0);    
+    }
+
+    50% {
+        transform: translateY(-2.4rem);    
+    }
+
+    100% {
+        transform: translateY(0);    
+    }
 }
 
 .home-content h3 {
@@ -385,6 +400,18 @@ span {
         padding: 10rem 3% 2rem;
     }
 
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
     .footer {
         padding: 2rem 3%;
     }    
@@ -416,4 +443,85 @@ span {
         font-size: 2rem;
         margin: 3rem 0;
     }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img { /*! Image Size Change */
+        width: 60vw; height: 60vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 60vw; height: 60vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-box img {
+        height: 30vw; scale: 1.25; /*! Projects Size Change */
+    }
+}
+
+@media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-box img {
+        height: 50vw; /*! Projects Size Change */
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img { /*! Image Size Change */
+        width: 90vw; height: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw; height: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }    
 }
