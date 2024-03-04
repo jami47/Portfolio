@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\aboutedt.aspx" />
+    <Content Include="admin\addprojects.aspx" />
+    <Content Include="admin\contactedt.aspx" />
+    <Content Include="admin\homedt.aspx" />
+    <Content Include="admin\projectsedt.aspx" />
+    <Content Include="admin\updelprojects.aspx" />
+    <Content Include="css\loginstyles.css" />
     <Content Include="css\styles.css" />
     <Content Include="images\about.jpg" />
     <Content Include="images\background.jpg" />
     <Content Include="images\background2.jpg" />
     <Content Include="images\home.jpg" />
     <Content Include="images\home_org.jpg" />
+    <Content Include="images\loginbg.jpg" />
     <Content Include="images\pattern_cyan.jpg" />
     <Content Include="images\pattern_leaves.png" />
     <Content Include="images\portfolio1.png" />
@@ -83,15 +91,65 @@
     <Content Include="images\portfolio6.png" />
     <Content Include="index.aspx" />
     <Content Include="js\script.js" />
+    <Content Include="login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\aboutedt.aspx.cs">
+      <DependentUpon>aboutedt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\aboutedt.aspx.designer.cs">
+      <DependentUpon>aboutedt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addprojects.aspx.cs">
+      <DependentUpon>addprojects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addprojects.aspx.designer.cs">
+      <DependentUpon>addprojects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\contactedt.aspx.cs">
+      <DependentUpon>contactedt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\contactedt.aspx.designer.cs">
+      <DependentUpon>contactedt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\homedt.aspx.cs">
+      <DependentUpon>homedt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\homedt.aspx.designer.cs">
+      <DependentUpon>homedt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\projectsedt.aspx.cs">
+      <DependentUpon>projectsedt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\projectsedt.aspx.designer.cs">
+      <DependentUpon>projectsedt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\updelprojects.aspx.cs">
+      <DependentUpon>updelprojects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\updelprojects.aspx.designer.cs">
+      <DependentUpon>updelprojects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
