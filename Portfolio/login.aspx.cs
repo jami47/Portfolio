@@ -16,7 +16,14 @@ namespace Portfolio
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                // Refresh the page without repeating the last action
+                //UserName.Text = string.Empty;
+                //UserPass.Text = string.Empty;
+                //Response.Redirect(Request.RawUrl);
+                //Server.TransferRequest(Request.Url.AbsolutePath, false);
+            }
         }
 
         protected void LogInBtn_Click(object sender, EventArgs e)
@@ -42,6 +49,7 @@ namespace Portfolio
                     //Console.WriteLine( srd.GetValue(0).ToString() );
                     if(UserName.Text.Equals(srd.GetValue(0).ToString()) && UserPass.Text.Equals(srd.GetValue(1).ToString()))
                     {
+
                         Response.Redirect("~/admin/aboutedt.aspx");
                     }
                     else

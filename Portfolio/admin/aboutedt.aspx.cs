@@ -78,6 +78,7 @@ namespace Portfolio.admin
                 cmd.ExecuteNonQuery();
 
                 con.Close();
+                Response.Write("<script>alert('Description Updated!')</script>");
             }
             catch 
             {

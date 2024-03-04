@@ -82,7 +82,11 @@ namespace Portfolio.admin
                             cmd.ExecuteNonQuery();
                             con.Close();
 
-                            Response.Write("<script>alert('Successfully Added!')</script>");
+                            //Response.Write("<script>alert('Successfully Added!')</script>");
+
+                            //Show a prompt and then go back
+                            string script = "<script type=\"text/javascript\">alert('Successfully Added!'); window.location='projectsedt.aspx';</script>";
+                            ClientScript.RegisterStartupScript(this.GetType(), "Alert", script);
 
                             Title.Text = null;
                             Link.Text = null;
