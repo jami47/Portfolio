@@ -38,7 +38,11 @@
             <h3> Hello, It's me</h3>
             <h1>Hemayetul Islam Jami</h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p runat="server" id="HomeDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam optio delectus unde cumque, repellendus recusandae! Nemo non dignissimos unde commodi perferendis? Architecto sed minima amet quam excepturi dolores distinctio impedit.</p>
+            <p runat="server" id="HomeDesc">I’m a Computer Science Engineering (CSE) student with a burning passion for all things tech. From the intricacies of programming languages to the art of development, I find joy in every bit of the process.</p>
+
+            <p runat="server">My journey in the tech world is fueled by a relentless curiosity and a desire to create. I believe in the power of code to transform ideas into reality, and I’m always ready to learn, build, and innovate.</p>
+
+            <p runat="server">Dive in to explore my projects, experiences, and the tech musings of a future software engineer. Welcome aboard!</p>
             <div class="social-media">
                 <a href="https://www.facebook.com/jami.978" target="_blank"><i class='bx bxl-facebook' ></i></a>
                 <a href="https://twitter.com/" target="_blank"><i class='bx bxl-twitter' ></i></a>
