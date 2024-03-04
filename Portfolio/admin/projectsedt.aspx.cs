@@ -17,12 +17,20 @@ namespace Portfolio.admin
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            //Go back to login page if unauthorized person tries to access
+            if (Session["authorization_check"] == null)
+            {
+                //Show a prompt and then go back
+                    string script = "<script type=\"text/javascript\">alert('Unauthorized Access Detected!'); window.location='../login.aspx';</script>";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Alert", script);
+            }
+
+            /*if (IsPostBack)
             {
                 // Refresh the page without repeating the last action
                 Response.Redirect(Request.RawUrl);
                 //Server.TransferRequest(Request.Url.AbsolutePath, false);
-            }
+            }*/
             if (!IsPostBack)
             {
                 try
@@ -81,6 +89,17 @@ namespace Portfolio.admin
             {
                 // No file selected
                 FileNameLabel.Text = "Please select a file.";
+            }
+        }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Session.Clear();
+
+            if (Session["uname"] == null)
+            {
+                Response.Redirect("~/login.aspx");
             }
         }
     }

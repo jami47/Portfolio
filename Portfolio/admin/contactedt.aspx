@@ -27,7 +27,7 @@
                 <a href="#">Contact</a>
                 <!--<a href="#" id="logout"><i class='bx bx-log-out' style="font-size:2.5rem;"></i></a>
                 <button runat="server"><i class='bx bx-log-out' style="font-size:2.5rem;"></i></button>-->
-                <asp:Button runat="server" ID="LogoutButton" Text="Logout" CssClass="button-12" style="margin-left:4rem;"/>
+                <asp:Button runat="server" ID="LogoutButton" Text="Logout" CssClass="button-12" style="margin-left:4rem;" OnClick="LogoutButton_Click" OnClientClick="return confirm('Are you sure?');"/>
             </nav>
         </header>
 

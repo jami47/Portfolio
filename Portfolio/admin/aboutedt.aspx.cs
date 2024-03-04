@@ -16,6 +16,16 @@ namespace Portfolio.admin
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+            //Go back to login page if unauthorized person tries to access
+                if (Session["authorization_check"] == null)
+                {
+                    //Response.Redirect("~/login.aspx");
+                    //Show a prompt and then go back
+                    string script = "<script type=\"text/javascript\">alert('Unauthorized Access Detected!'); window.location='../login.aspx';</script>";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Alert", script);
+                }
+            
             try
             {
                 if (!IsPostBack) 
@@ -83,6 +93,17 @@ namespace Portfolio.admin
             catch 
             {
                 
+            }
+        }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Session.Clear();
+
+            if (Session["uname"] == null)
+            {
+                Response.Redirect("~/login.aspx");
             }
         }
     }

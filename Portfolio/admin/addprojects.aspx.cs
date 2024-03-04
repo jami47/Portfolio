@@ -19,7 +19,13 @@ namespace Portfolio.admin
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Go back to login page if unauthorized person tries to access
+            if (Session["authorization_check"] == null)
+            {
+                //Show a prompt and then go back
+                string go_back = "<script type=\"text/javascript\">alert('Unauthorized Access Detected!'); window.location='../login.aspx';</script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", go_back);
+            }
         }
 
         protected void UploadButton_Click(object sender, EventArgs e)

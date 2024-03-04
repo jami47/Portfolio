@@ -16,6 +16,14 @@ namespace Portfolio.admin
         string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Go back to login page if unauthorized person tries to access
+            if (Session["authorization_check"] == null)
+            {
+                //Show a prompt and then go back
+                    string go_back = "<script type=\"text/javascript\">alert('Unauthorized Access Detected!'); window.location='../login.aspx';</script>";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Alert", go_back);
+            }
+
             // Register a startup script that scrolls to the bottom of the page
             string script = "window.onload = function() { window.scrollTo(0, document.body.scrollHeight); }";
             ClientScript.RegisterStartupScript(this.GetType(), "ScrollToBottom", script, true);
@@ -55,6 +63,17 @@ namespace Portfolio.admin
                 { 
                 
                 }
+            }
+        }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Session.Clear();
+
+            if (Session["uname"] == null)
+            {
+                Response.Redirect("~/login.aspx");
             }
         }
     }

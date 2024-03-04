@@ -24,6 +24,23 @@ namespace Portfolio
                 //Response.Redirect(Request.RawUrl);
                 //Server.TransferRequest(Request.Url.AbsolutePath, false);
             }
+            if (!IsPostBack)
+            {
+                HttpCookie cookie = Request.Cookies["User_Info"];
+                //Show UserName using Cookie
+                if (cookie != null)
+                {
+                    if (cookie["uname"] != null)
+                        UserName.Text = cookie["uname"].ToString();
+                }
+
+                //Show UserPassword using Session         
+                if (Session["upass"] != null)
+                {
+                    UserPass.Text = Session["upass"].ToString();
+                }
+
+            }
         }
 
         protected void LogInBtn_Click(object sender, EventArgs e)
@@ -49,6 +66,20 @@ namespace Portfolio
                     //Console.WriteLine( srd.GetValue(0).ToString() );
                     if(UserName.Text.Equals(srd.GetValue(0).ToString()) && UserPass.Text.Equals(srd.GetValue(1).ToString()))
                     {
+                        // Save password in session if RememberMe checkbox is clicked
+                        if(RememberMe.Checked)
+                        {
+                            Session["upass"] = UserPass.Text;
+                        }
+
+                        // Session for checking unauthorized access
+                        Session["authorization_check"] = "authorized";
+
+                        // Create a new cookie for the UserName
+                        HttpCookie cookie = new HttpCookie("User_Info");
+                        cookie["uname"] = UserName.Text;
+                        cookie.Expires = DateTime.Now.AddDays(2);
+                        Response.Cookies.Add(cookie);
 
                         Response.Redirect("~/admin/aboutedt.aspx");
                     }
